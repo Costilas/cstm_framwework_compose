@@ -1,16 +1,20 @@
-up:	do own nginxpermission chmod 
+CONTAINER_NAME=framework-php-fpm-1
+WORKDIR=/var/www/html/app
 
+exec:
+	docker exec -w $(WORKDIR) $(CONTAINER_NAME) $(COM)
 
-do:
-	docker exec customframework_php-fpm_1 $(COM)
+composer:
+	docker exec -w $(WORKDIR) $(CONTAINER_NAME) composer install --dev
 
-own:
-	docker exec customframework_php-fpm_1 chown 1000:1000 -R ./
+build: remove
+	docker-compose up -d --build
 
-nginxpermission:
-	docker exec customframework_php-fpm_1 chown 1000:1000 -R ./
+remove:
+	docker-compose down
 
-chmod:
-	chmod 777 -R ./
+start:
+	docker-compose up -d
 
-
+stop:
+	docker-compose stop

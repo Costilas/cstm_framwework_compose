@@ -1,0 +1,14 @@
+
+1. Move configs to .env (db и тд)
+2. DI Container
+3. Make collections
+4. Refactor pagination()
+5. Make builder
+6. Make raw queries
+7. Make model relationships
+8. Make PHPDocs
+9. Redis
+10. Make DBManager (different dbs)
+11. Make migrations
+12. Make seeding
+13. Make console commands

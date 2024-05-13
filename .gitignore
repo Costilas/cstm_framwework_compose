@@ -1,2 +1,7 @@
 .idea
 app/
+mysql-data
+
+# Ingnore specific MacOS files
+.DS_Store
+._*
